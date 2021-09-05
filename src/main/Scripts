@@ -1,0 +1,13 @@
+create table users (
+	id_user serial primary key,
+	login varchar not null,
+	datebirth integer not null,
+	gender boolean not null
+);
+
+
+create table user_request (
+ 	id_request serial primary key,
+ 	request_data_time timestamp not null,
+ 	id_user integer references users(id_user)
+ );
